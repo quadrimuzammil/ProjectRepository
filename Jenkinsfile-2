@@ -6,6 +6,6 @@ node{
   
   stage ('Build Code'){
   sh "${mavenHome}/bin/mvn clean package"
-
 }
 
+}
