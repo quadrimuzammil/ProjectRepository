@@ -15,7 +15,26 @@
              <sonar.host.url>http://3.110.188.148:9000/projects</sonar.host.url>
 	     <sonar.login>ee150da5d61496295588d2e0db6e8dc25d3cf262</sonar.login>
 </properties>
+  <repositories>
+     <repository>
+	     <id>nexus</id>
+	     <url>http://3.110.160.186:8081/repository/vijay-snapshot-repo/</url>
+     </repository>
+  </repositories>
+	
+    <distributionManagement>
+	    <repository>
+		    <id>nexus</id>
+		    <name>Vijay</name>
+		    <url>http://3.110.160.186:8081/repository/vijay-snapshot-repo/</url>
+	    </repository>
 
+	    <snapshotRepository>
+		    <id>nexus</id>
+		    <name>Vijay</name>
+		    <url>http://3.110.160.186:8081/repository/vijay-release-repo/</url>
+	   </snapshotRepository>
+   </distributionManagement>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
