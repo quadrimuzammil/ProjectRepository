@@ -7,9 +7,19 @@ node{
   stage ('Build Code'){
   sh "${mavenHome}/bin/mvn clean package"
 }
-
+/*
  stage ('Execute SonarQube Report'){
  sh "${mavenHome}/bin/mvn sonar:sonar"
  }
+*/
+
+stage ('Upload Artifact'){
+sh "${mavenHome}/bin/mvn deploy"
+}
+stage ('Deploy Application to Tomcat'){
+sshagent(['Deploy_Web_Application']) {
+sh "scp -o StictHostKeyChecking=no target/GermanySVMX-0.0.1-SNAPSHOT.jar ec2-user@13.232.22.210:/opt/apache-tomcat-9.0.64/webapps/"
+}
+}
 
 }
