@@ -1,1 +1,11 @@
+node{
+  def mavenHome= tool name: "Maven 3.8.6"
+  stage ('Take Code'){
+  git branch: 'QA', credentialsId: 'GITHUB_CREDENTIALS', url: 'https://github.com/quadrimuzammil/ProjectRepository.git'
+  }
+  
+  stage ('Build Code'){
+  sh "${mavenHome}/bin/mvn clean package"
+
+}
 
