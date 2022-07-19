@@ -12,7 +12,9 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+             <sonar.host.url>http://3.110.188.148:9000/projects</sonar.host.url>
+	     <sonar.login>ee150da5d61496295588d2e0db6e8dc25d3cf262</sonar.login>
+</properties>
 
   <dependencies>
     <dependency>
